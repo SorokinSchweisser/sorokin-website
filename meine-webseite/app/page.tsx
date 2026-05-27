@@ -428,7 +428,7 @@ export default function Home() {
           </div>
 
           {/* Headline – static top lines + looping typewriter line */}
-          <h1 className="font-black tracking-tight leading-[1.1]" style={{ margin: "0 0 24px 0", padding: 0 }}>
+          <h1 className="font-black tracking-tight leading-[1.1] mb-8 md:mb-12">
             <span className="block text-3xl md:text-6xl lg:text-7xl" style={{ color: "#ffffff" }}>
               Schweißen &amp;
             </span>
@@ -436,11 +436,11 @@ export default function Home() {
               Metallreparatur
             </span>
             <span
-              className="block text-3xl md:text-6xl lg:text-7xl"
+              className="block text-3xl md:text-6xl lg:text-7xl mt-6 md:mt-10"
               style={{ color: TYPE_WORDS[typeIndex].color, minHeight: "1.1em" }}
             >
               {typed}
-              <span className="hero-caret" style={{ color: "#f97316", fontWeight: 700 }}>|</span>
+              <span className="hero-caret" style={{ color: TYPE_WORDS[typeIndex].color, fontWeight: 700 }}>|</span>
             </span>
           </h1>
 
