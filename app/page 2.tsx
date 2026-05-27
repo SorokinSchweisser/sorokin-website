@@ -151,8 +151,8 @@ const reviews = [
   { name: "Klaus-Dieter Hoffmann", initials: "KH", date: "vor 2 Wochen", text: "Absolut top! Konstantin kam innerhalb von 2 Stunden zu uns, hat die gebrochene Achskonstruktion am Anhänger perfekt repariert. Keine Schlacke, keine Nacharbeit. Klare Weiterempfehlung!" },
   { name: "Sandra Brinkmann", initials: "SB", date: "vor 1 Monat", text: "Unser altes Schmiedeeisengitter war komplett verrostet und gerissen. Herr Sorokin hat es wie neu gemacht – man sieht keine Schweißnaht mehr. Professionell und fair im Preis." },
   { name: "Thomas Lüttger", initials: "TL", date: "vor 3 Wochen", text: "Industrieschweißarbeiten an unserer Produktionsanlage. Termingerecht, sauber, DIN-konform. Wir arbeiten jetzt dauerhaft mit Sorokin zusammen." },
-  { name: "Monika Schneider", initials: "MS", date: "vor 5 Wochen", text: "Pforte und Zaunfeld repariert. Herr Sorokin ist super nett, hat alles erklärt und das Ergebnis übertrifft meine Erwartungen. Kommt direkt vorbei – perfekter Service!" },
-  { name: "Dirk Kessler", initials: "DK", date: "vor 1 Monat", text: "WIG-Schweißen an Edelstahlgeländern – absolut makellose Nähte. Man sieht, dass hier jemand sein Handwerk wirklich liebt. 10 von 10 Punkten." },
+  { name: "Monika Schneider", initials: "MS", date: "vor 5 Wochen", text: "Metallkonstruktion repariert. Herr Sorokin ist super nett, hat alles erklärt und das Ergebnis übertrifft meine Erwartungen. Kommt direkt vorbei – perfekter Service!" },
+  { name: "Dirk Kessler", initials: "DK", date: "vor 1 Monat", text: "WIG-Schweißen an Edelstahlbauteilen – absolut makellose Nähte. Man sieht, dass hier jemand sein Handwerk wirklich liebt. 10 von 10 Punkten." },
   { name: "Ute Bergmann", initials: "UB", date: "vor 6 Wochen", text: "Superflexibel und mobil – Herr Sorokin kam direkt auf unser Grundstück. Schweißarbeiten an einem Gartenpavilion, alles perfekt erledigt. Preis-Leistung unschlagbar!" },
   { name: "Andreas Völker", initials: "AV", date: "vor 2 Monaten", text: "Reparatur an einem Baumaschinenrahmen. Andere Firmen haben abgesagt, Herr Sorokin hat es gemacht – und zwar erstklassig. Hält bis heute problemlos. Herzlichen Dank!" },
 ];
