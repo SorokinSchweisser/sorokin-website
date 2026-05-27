@@ -248,7 +248,7 @@ export default function Home() {
         style={{ background: scrolled ? undefined : "transparent" }}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="relative flex items-center justify-between h-18" style={{ height: 72 }}>
+          <div className="relative flex items-center justify-between h-[72px] md:h-[92px]">
 
             <a href="#" className="flex items-center flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
               <Image
@@ -257,7 +257,7 @@ export default function Home() {
                 width={612}
                 height={408}
                 priority
-                className="h-9 md:h-[50px] w-auto object-contain"
+                className="h-14 md:h-[76px] w-auto object-contain"
               />
             </a>
 
@@ -642,14 +642,14 @@ export default function Home() {
 
             {/* Left – Portrait */}
             <div className="reveal-left flex justify-center">
-              <div className="relative">
+              <div className="relative w-full md:w-auto">
                 {/* Warm orange glow */}
                 <div
                   className="absolute -inset-5 rounded-3xl"
                   style={{ background: "linear-gradient(135deg, rgba(232,101,10,0.18) 0%, rgba(29,111,168,0.10) 100%)", filter: "blur(24px)" }}
                 />
                 <div
-                  className="relative rounded-2xl overflow-hidden group w-full max-w-[420px] h-80 md:h-[540px]"
+                  className="relative rounded-2xl overflow-hidden group w-full md:max-w-[420px] h-80 sm:h-96 md:h-[540px]"
                   style={{ border: "2px solid rgba(232,101,10,0.3)", boxShadow: "0 32px 80px rgba(0,0,0,0.18)" }}
                 >
                   <Image
@@ -708,6 +708,28 @@ export default function Home() {
                 Er arbeitet präzise, termintreu und zuverlässig, auch als Subunternehmer
                 für Betriebe und Handwerksfirmen.
               </p>
+
+              {/* Certification badge + specialization tags */}
+              <div className="flex flex-wrap items-center gap-2.5 mb-8">
+                <span
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold"
+                  style={{ background: "rgba(29,111,168,0.08)", color: "#1d6fa8", border: "1px solid rgba(29,111,168,0.22)" }}
+                >
+                  <svg viewBox="0 0 20 20" fill="#1d6fa8" className="w-3.5 h-3.5">
+                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  DIN EN ISO 9606-1 zertifiziert
+                </span>
+                {["Mobiler Schweißer", "WIG", "MAG", "E-Schweißen", "Subunternehmer"].map((t) => (
+                  <span
+                    key={t}
+                    className="px-3.5 py-1.5 rounded-full text-xs font-bold"
+                    style={{ background: "rgba(232,101,10,0.08)", color: "#E8650A", border: "1px solid rgba(232,101,10,0.2)" }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
 
               {/* Feature list */}
               <div className="space-y-3 mb-9">
