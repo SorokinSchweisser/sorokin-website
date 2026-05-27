@@ -642,7 +642,7 @@ export default function Home() {
 
             {/* Left – Portrait */}
             <div className="reveal-left flex justify-center">
-              <div className="relative w-full md:w-auto">
+              <div className="relative w-full md:max-w-[420px]">
                 {/* Warm orange glow */}
                 <div
                   className="absolute -inset-5 rounded-3xl"
@@ -656,8 +656,7 @@ export default function Home() {
                     src="/WhatsApp%20Image%202026-05-21%20at%2015.50.11%20Kopie%202.jpeg"
                     alt="Konstantin Sorokin – Geprüfter Schweißer · DIN EN ISO 9606-1"
                     fill
-                    className="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                    className="object-cover object-[center_30%] md:object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
                     quality={90}
                     sizes="(max-width: 768px) 100vw, 45vw"
                   />
