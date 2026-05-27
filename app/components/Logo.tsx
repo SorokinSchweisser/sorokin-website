@@ -5,12 +5,13 @@ type LogoProps = {
 
 export default function Logo({ size, variant }: LogoProps) {
   return (
-    <a href="#" className="flex items-center">
-      <img
-        src="/logo.png"
-        alt="SOROKIN Mobiler Schweißservice"
-        className="h-12 md:h-16 w-auto object-contain"
-      />
-    </a>
+    <div className="flex flex-col leading-tight" aria-label="SOROKIN Mobiler Schweißservice">
+      <span className="text-2xl md:text-3xl font-bold tracking-wide text-white">
+        SOROKIN
+      </span>
+      <span className="text-xs md:text-sm text-white/80 font-light tracking-wider">
+        Mobiler Schweißservice
+      </span>
+    </div>
   );
 }
