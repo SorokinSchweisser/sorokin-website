@@ -639,7 +639,7 @@ export default function Home() {
                 >
                   <Image
                     src="/WhatsApp%20Image%202026-05-21%20at%2015.50.11%20Kopie%202.jpeg"
-                    alt="Konstantin Sorokin – Mobiler Schweißfachmann"
+                    alt="Konstantin Sorokin – Geprüfter Schweißer · DIN EN ISO 9606-1"
                     fill
                     className="transition-transform duration-300 ease-in-out group-hover:scale-105"
                     style={{ objectFit: "cover", objectPosition: "center top" }}
@@ -653,7 +653,7 @@ export default function Home() {
                   >
                     <div className="font-black text-white text-xl tracking-tight">Konstantin Sorokin</div>
                     <div className="text-sm font-semibold mt-1" style={{ color: "#E8650A" }}>
-                      Mobiler Schweißfachmann
+                      Geprüfter Schweißer · DIN EN ISO 9606-1
                     </div>
                     <div className="flex items-center gap-2 mt-3">
                       {["WIG", "MAG", "E-Schweißen"].map((v) => (

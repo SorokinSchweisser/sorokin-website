@@ -540,7 +540,7 @@ export default function Home() {
                     style={{ background: "linear-gradient(to top, rgba(5,14,30,0.88) 0%, transparent 100%)" }}
                   >
                     <div className="font-bold text-white text-lg">Konstantin Sorokin</div>
-                    <div className="text-sm" style={{ color: "#f97316" }}>Zertifizierter Schweißfachmann · DIN EN ISO 9606</div>
+                    <div className="text-sm" style={{ color: "#f97316" }}>Geprüfter Schweißer · DIN EN ISO 9606-1</div>
                   </div>
                 </div>
               </div>
