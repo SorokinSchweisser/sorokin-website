@@ -343,12 +343,13 @@ export default function Home() {
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
 
         {/* Background image */}
-        <div className="absolute inset-0 hero-img">
+        <div className="absolute inset-0 hero-img overflow-hidden">
           <Image
             src="/1c7885fd-0c4f-40ad-bf3a-bc579185acc9.jpg"
             alt="SOROKIN Schweißservice – professionelle Schweißarbeiten"
             fill
-            style={{ objectFit: "cover", objectPosition: "center center" }}
+            className="object-cover"
+            style={{ objectPosition: "center center" }}
             priority
             quality={90}
             sizes="100vw"
