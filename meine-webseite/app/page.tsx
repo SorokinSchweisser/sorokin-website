@@ -38,7 +38,7 @@ function useReveal() {
 const services = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
       </svg>
@@ -48,7 +48,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
       </svg>
     ),
@@ -57,7 +57,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
       </svg>
     ),
@@ -66,7 +66,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
       </svg>
     ),
@@ -75,7 +75,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
@@ -85,7 +85,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
@@ -94,7 +94,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="1.75" className="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 13h2v5h14v-5h2v7H3v-7z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M7 13V8a2 2 0 012-2h6a2 2 0 012 2v5" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 21v-4h6v4" />
@@ -109,7 +109,7 @@ const services = [
 const uspItems = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="2" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="2" className="w-7 h-7">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
       </svg>
     ),
@@ -118,7 +118,7 @@ const uspItems = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="2" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="2" className="w-7 h-7">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -127,7 +127,7 @@ const uspItems = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="2" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="2" className="w-7 h-7">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -136,7 +136,7 @@ const uspItems = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="2" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="2" className="w-7 h-7">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -149,7 +149,7 @@ const uspItems = [
 const TYPE_WORDS: Array<{ text: string; color: string }> = [
   { text: "Präzise.", color: "#f97316" },
   { text: "Zuverlässig.", color: "#ffffff" },
-  { text: "Professionell.", color: "#1d6fa8" },
+  { text: "Professionell.", color: "#0770b0" },
 ];
 
 const galleryImages = [
@@ -511,7 +511,7 @@ export default function Home() {
               <div key={i} className={`usp-item flex flex-col items-center text-center gap-3 reveal delay-${i + 1}`}>
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(29,111,168,0.08)", border: "1px solid rgba(29,111,168,0.14)" }}
+                  style={{ background: "rgba(7,112,176,0.08)", border: "1px solid rgba(7,112,176,0.14)" }}
                 >
                   {item.icon}
                 </div>
@@ -530,13 +530,13 @@ export default function Home() {
         <div className="max-w-lg mx-auto px-6 flex justify-center reveal">
           <div
             className="flex flex-col sm:flex-row items-center gap-5 w-full px-10 py-7 rounded-2xl text-center sm:text-left"
-            style={{ background: "#fff", border: "2px solid #1d6fa8", boxShadow: "0 4px 24px rgba(29,111,168,0.10)" }}
+            style={{ background: "#fff", border: "2px solid #0770b0", boxShadow: "0 4px 24px rgba(7,112,176,0.10)" }}
           >
             <div
               className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-              style={{ background: "rgba(29,111,168,0.08)" }}
+              style={{ background: "rgba(7,112,176,0.08)" }}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="2" className="w-7 h-7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0770b0" strokeWidth="2" className="w-7 h-7">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
@@ -544,7 +544,7 @@ export default function Home() {
               <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#6b7280" }}>
                 Zertifiziert nach
               </div>
-              <div className="font-black text-2xl leading-tight" style={{ color: "#1d6fa8" }}>
+              <div className="font-black text-2xl leading-tight" style={{ color: "#0770b0" }}>
                 DIN EN ISO 9606-1
               </div>
               <div className="text-sm mt-1" style={{ color: "#4b5563" }}>
@@ -562,7 +562,7 @@ export default function Home() {
             <div className="flex justify-center mb-5">
               <div className="section-line" />
             </div>
-            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#f97316" }}>
+            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#0770b0" }}>
               Leistungen
             </p>
             <h2
@@ -591,14 +591,14 @@ export default function Home() {
                     <div>
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                        style={{ background: "rgba(29,111,168,0.07)", border: "1px solid rgba(29,111,168,0.12)" }}
+                        style={{ background: "rgba(7,112,176,0.07)", border: "1px solid rgba(7,112,176,0.12)" }}
                       >
                         {s.icon}
                       </div>
                       <h3 className="font-black text-2xl mb-1 leading-tight" style={{ color: "#111827" }}>
                         {s.title}
                       </h3>
-                      <p className="text-base font-semibold mb-5" style={{ color: "#1d6fa8" }}>
+                      <p className="text-base font-semibold mb-5" style={{ color: "#0770b0" }}>
                         für Stahl, Edelstahl &amp; Aluminium
                       </p>
                       <p className="text-sm leading-relaxed mb-6" style={{ color: "#4b5563" }}>
@@ -610,7 +610,7 @@ export default function Home() {
                           <span
                             key={m}
                             className="px-3 py-1 rounded-full text-xs font-bold"
-                            style={{ background: "rgba(29,111,168,0.08)", color: "#1d6fa8", border: "1px solid rgba(29,111,168,0.18)" }}
+                            style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0", border: "1px solid rgba(7,112,176,0.18)" }}
                           >
                             {m}
                           </span>
@@ -637,7 +637,7 @@ export default function Home() {
                           <span
                             key={p}
                             className="px-3 py-1.5 rounded-lg text-xs font-bold"
-                            style={{ background: "rgba(232,101,10,0.08)", color: "#E8650A", border: "1px solid rgba(232,101,10,0.2)" }}
+                            style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0", border: "1px solid rgba(7,112,176,0.2)" }}
                           >
                             {p}
                           </span>
@@ -655,7 +655,7 @@ export default function Home() {
                 >
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: "rgba(29,111,168,0.07)", border: "1px solid rgba(29,111,168,0.12)" }}
+                    style={{ background: "rgba(7,112,176,0.07)", border: "1px solid rgba(7,112,176,0.12)" }}
                   >
                     {s.icon}
                   </div>
@@ -683,7 +683,7 @@ export default function Home() {
                 {/* Warm orange glow */}
                 <div
                   className="absolute -inset-5 rounded-3xl"
-                  style={{ background: "linear-gradient(135deg, rgba(232,101,10,0.18) 0%, rgba(29,111,168,0.10) 100%)", filter: "blur(24px)" }}
+                  style={{ background: "linear-gradient(135deg, rgba(232,101,10,0.18) 0%, rgba(7,112,176,0.10) 100%)", filter: "blur(24px)" }}
                 />
                 <div
                   className="relative rounded-2xl overflow-hidden group w-full md:max-w-[420px] h-80 sm:h-96 md:h-[540px]"
@@ -724,13 +724,13 @@ export default function Home() {
 
             {/* Right – Text */}
             <div className="reveal-right">
-              <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#E8650A" }}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#0770b0" }}>
                 Über mich
               </p>
               <div className="section-line mb-6" />
               <h2 className="font-black mb-7 leading-tight" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#111827" }}>
                 <span style={{ display: "block" }}>Ein Handwerker.</span>
-                <span style={{ display: "block", color: "#1d6fa8" }}>Eine Leidenschaft.</span>
+                <span style={{ display: "block", color: "#0770b0" }}>Eine Leidenschaft.</span>
                 <span style={{ display: "block" }}>Perfekte Schweißnähte.</span>
               </h2>
 
@@ -749,9 +749,9 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-2.5 mb-8">
                 <span
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold"
-                  style={{ background: "rgba(29,111,168,0.08)", color: "#1d6fa8", border: "1px solid rgba(29,111,168,0.22)" }}
+                  style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0", border: "1px solid rgba(7,112,176,0.22)" }}
                 >
-                  <svg viewBox="0 0 20 20" fill="#1d6fa8" className="w-3.5 h-3.5">
+                  <svg viewBox="0 0 20 20" fill="#0770b0" className="w-3.5 h-3.5">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   DIN EN ISO 9606-1 zertifiziert
@@ -760,7 +760,7 @@ export default function Home() {
                   <span
                     key={t}
                     className="px-3.5 py-1.5 rounded-full text-xs font-bold"
-                    style={{ background: "rgba(232,101,10,0.08)", color: "#E8650A", border: "1px solid rgba(232,101,10,0.2)" }}
+                    style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0", border: "1px solid rgba(7,112,176,0.2)" }}
                   >
                     {t}
                   </span>
@@ -772,7 +772,7 @@ export default function Home() {
                 {[
                   {
                     icon: (
-                      <svg viewBox="0 0 20 20" fill="#E8650A" className="w-4 h-4">
+                      <svg viewBox="0 0 20 20" fill="#0770b0" className="w-4 h-4">
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                       </svg>
                     ),
@@ -780,7 +780,7 @@ export default function Home() {
                   },
                   {
                     icon: (
-                      <svg viewBox="0 0 20 20" fill="#E8650A" className="w-4 h-4">
+                      <svg viewBox="0 0 20 20" fill="#0770b0" className="w-4 h-4">
                         <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                       </svg>
                     ),
@@ -788,7 +788,7 @@ export default function Home() {
                   },
                   {
                     icon: (
-                      <svg viewBox="0 0 20 20" fill="#E8650A" className="w-4 h-4">
+                      <svg viewBox="0 0 20 20" fill="#0770b0" className="w-4 h-4">
                         <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     ),
@@ -796,7 +796,7 @@ export default function Home() {
                   },
                   {
                     icon: (
-                      <svg viewBox="0 0 20 20" fill="#E8650A" className="w-4 h-4">
+                      <svg viewBox="0 0 20 20" fill="#0770b0" className="w-4 h-4">
                         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                       </svg>
                     ),
@@ -827,7 +827,7 @@ export default function Home() {
                     className="px-5 py-4 rounded-xl"
                     style={{ background: "#fff", border: "1px solid #e5e7eb", boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}
                   >
-                    <div className="font-black text-lg leading-tight" style={{ color: "#1d6fa8" }}>{s.n}</div>
+                    <div className="font-black text-lg leading-tight" style={{ color: "#0770b0" }}>{s.n}</div>
                     <div className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{s.l}</div>
                   </div>
                 ))}
@@ -845,7 +845,7 @@ export default function Home() {
             <div className="flex justify-center mb-5">
               <div className="section-line" />
             </div>
-            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#f97316" }}>
+            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#0770b0" }}>
               Galerie
             </p>
             <h2
@@ -885,7 +885,7 @@ export default function Home() {
             <div className="flex justify-center mb-5">
               <div className="section-line" />
             </div>
-            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#f97316" }}>
+            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#0770b0" }}>
               Google Bewertungen
             </p>
             <h2
@@ -941,7 +941,7 @@ export default function Home() {
                             width: 44,
                             height: 44,
                             borderRadius: "50%",
-                            background: "linear-gradient(135deg, #1d6fa8 0%, #2563eb 100%)",
+                            background: "linear-gradient(135deg, #0770b0 0%, #2563eb 100%)",
                             color: "#fff",
                             fontWeight: 700,
                             fontSize: 14,
@@ -1033,7 +1033,7 @@ export default function Home() {
             <div className="flex justify-center mb-5">
               <div className="section-line" />
             </div>
-            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#f97316" }}>
+            <p className="text-sm font-bold tracking-widest uppercase mb-3" style={{ color: "#0770b0" }}>
               Kontakt
             </p>
             <h2
@@ -1095,7 +1095,7 @@ export default function Home() {
                 >
                   <div
                     className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{ background: "rgba(29,111,168,0.08)", color: "#1d6fa8" }}
+                    style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0" }}
                   >
                     {item.icon}
                   </div>
@@ -1116,7 +1116,7 @@ export default function Home() {
                 >
                   <div
                     className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{ background: "rgba(29,111,168,0.08)", color: "#1d6fa8" }}
+                    style={{ background: "rgba(7,112,176,0.08)", color: "#0770b0" }}
                   >
                     {item.icon}
                   </div>
@@ -1390,7 +1390,7 @@ export default function Home() {
       </section>
 
       {/* ══ FOOTER ══ */}
-      <footer style={{ background: "linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)", borderTop: "3px solid #E8650A" }}>
+      <footer style={{ background: "linear-gradient(160deg, #0a3957 0%, #07273b 100%)", borderTop: "3px solid #E8650A" }}>
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid md:grid-cols-3 gap-12">
 
@@ -1478,7 +1478,7 @@ export default function Home() {
         </div>
 
         {/* Bottom bar – slightly darker */}
-        <div style={{ background: "#0f0f1a" }}>
+        <div style={{ background: "#061f30" }}>
           <div
             className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
             style={{ color: "#94a3b8" }}

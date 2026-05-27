@@ -1,7 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand-blue: #1d6fa8;
+  /* Primary — derived from the SOROKIN transporter cerulean (#0080d0). */
+  --color-primary-50:  #eef8fe;
+  --color-primary-100: #d8effd;
+  --color-primary-200: #aeddfa;
+  --color-primary-300: #68bef3;
+  --color-primary-400: #1d9ded;
+  --color-primary-500: #0081d1; /* vivid transporter blue (accent / large UI) */
+  --color-primary-600: #0770b0; /* PRIMARY — AA on white, white-text safe */
+  --color-primary-700: #085d91;
+  --color-primary-800: #094b74;
+  --color-primary-900: #0a3957; /* footer base */
+  --color-primary-950: #07273b; /* footer deep */
+  --color-primary: #0770b0;
+  --color-brand-blue: #0770b0;
   --color-brand-orange: #f97316;
 }
 
@@ -81,8 +94,8 @@ body {
 
 /* ── ISO badge pulse ── */
 @keyframes badge-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(29, 111, 168, 0.25); }
-  60%       { box-shadow: 0 0 0 7px rgba(29, 111, 168, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(7, 112, 176, 0.25); }
+  60%       { box-shadow: 0 0 0 7px rgba(7, 112, 176, 0); }
 }
 .iso-badge { animation: badge-pulse 3.5s ease-in-out infinite; }
 
@@ -154,7 +167,7 @@ body {
   width: 44px;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #1d6fa8, #f97316);
+  background: linear-gradient(90deg, #0770b0, #f97316);
 }
 
 /* ── Buttons ── */
@@ -207,7 +220,7 @@ body {
 }
 
 .btn-blue {
-  background: #1d6fa8;
+  background: #0770b0;
   color: #fff;
   font-weight: 700;
   display: inline-flex;
@@ -219,7 +232,7 @@ body {
 .btn-blue:hover {
   background: #195f92;
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(29, 111, 168, 0.32);
+  box-shadow: 0 8px 28px rgba(7, 112, 176, 0.32);
 }
 
 .btn-outline-white {
@@ -267,9 +280,9 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .service-card:hover {
-  border-color: #1d6fa8;
+  border-color: #0770b0;
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(29, 111, 168, 0.1);
+  box-shadow: 0 20px 50px rgba(7, 112, 176, 0.1);
 }
 
 /* ── Gallery ── */
@@ -310,8 +323,8 @@ body {
 .form-input:hover { border-color: #9ca3af; }
 .form-input:focus {
   background: #fff;
-  border-color: #1d6fa8;
-  box-shadow: 0 0 0 3px rgba(29, 111, 168, 0.12);
+  border-color: #0770b0;
+  box-shadow: 0 0 0 3px rgba(7, 112, 176, 0.12);
 }
 .form-input::placeholder { color: #9ca3af; }
 
@@ -339,10 +352,10 @@ body {
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #f3f4f6; }
-::-webkit-scrollbar-thumb { background: #1d6fa8; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #0770b0; border-radius: 3px; }
 
 /* ── Selection ── */
-::selection { background: rgba(29, 111, 168, 0.18); color: #111827; }
+::selection { background: rgba(7, 112, 176, 0.18); color: #111827; }
 
 /* ════════════════════ Premium polish pass ════════════════════ */
 
@@ -366,8 +379,8 @@ button:focus-visible,
 .service-card:hover {
   box-shadow:
     0 1px 2px rgba(16, 24, 40, 0.04),
-    0 10px 24px rgba(29, 111, 168, 0.10),
-    0 24px 56px rgba(29, 111, 168, 0.10) !important;
+    0 10px 24px rgba(7, 112, 176, 0.10),
+    0 24px 56px rgba(7, 112, 176, 0.10) !important;
 }
 .review-card { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease; }
 .review-card:hover {
