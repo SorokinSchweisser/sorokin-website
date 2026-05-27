@@ -17,9 +17,12 @@ export default function Logo({ size = "md", variant = "dark", inline, showSubtit
           SOROKIN
         </span>
         {showSubtitle && (
-          <span className="text-xs md:text-sm font-light tracking-wider" style={{ color: "#f97316" }}>
-            Mobiler Schweißservice
-          </span>
+          <>
+            {inline && <span className="w-px h-4 bg-[#f97316] opacity-40 mx-2" aria-hidden="true" />}
+            <span className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "#f97316" }}>
+              Mobiler Schweißservice
+            </span>
+          </>
         )}
       </div>
     </div>
