@@ -3,17 +3,15 @@ type LogoProps = {
   variant?: "light" | "dark";
 };
 
-export default function Logo({ size = "md", variant = "dark" }: LogoProps) {
+export default function Logo({ size, variant }: LogoProps) {
   return (
-    <div className={`logo-root logo-${size} ${variant === "light" ? "logo-light" : "logo-dark"}`}>
-      <div className="logo-brand" aria-label="SOROKIN Mobiler Schweißservice">
-        <span className="logo-brand-title">
-          <span className="logo-title-white">SOR</span>
-          <span className="logo-title-orange">OKIN</span>
-          <span className="logo-title-dot" aria-hidden="true">.</span>
-        </span>
-        <span className="logo-brand-subtitle">Mobiler Schweißservice</span>
-      </div>
+    <div className="flex flex-col leading-tight">
+      <span className="text-2xl md:text-3xl font-bold tracking-wide text-white">
+        SOROKIN
+      </span>
+      <span className="text-xs md:text-sm text-white/80 font-light tracking-wider">
+        Mobiler Schweißservice
+      </span>
     </div>
   );
 }
