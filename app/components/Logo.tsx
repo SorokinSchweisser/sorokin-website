@@ -1,29 +1,16 @@
-import Image from "next/image";
-
 type LogoProps = {
   size?: "sm" | "md" | "lg";
   variant?: "light" | "dark";
 };
 
-const logoDimensions = {
-  sm: { width: 72, height: 48 },
-  md: { width: 84, height: 56 },
-  lg: { width: 102, height: 68 },
-};
-
 export default function Logo({ size = "md", variant = "dark" }: LogoProps) {
-  const dimensions = logoDimensions[size] ?? logoDimensions.md;
-
   return (
-    <div className={`logo-root ${variant === "light" ? "logo-light" : "logo-dark"}`}>
-      <Image
-        src="/logo.png"
-        alt="SOROKIN Mobiler Schweißservice"
-        width={dimensions.width}
-        height={dimensions.height}
-        priority
-        className="logo-image"
-      />
+    <div className={`logo-root logo-${size} ${variant === "light" ? "logo-light" : "logo-dark"}`}>
+      <span className="logo-accent" aria-hidden="true" />
+      <div className="logo-brand" aria-label="SOROKIN Mobiler Schweißservice">
+        <span className="logo-brand-title">SOROKIN</span>
+        <span className="logo-brand-subtitle">Mobiler Schweißservice</span>
+      </div>
     </div>
   );
 }

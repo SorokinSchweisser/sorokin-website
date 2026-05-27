@@ -24,3 +24,108 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.logo-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.28rem 0;
+  max-width: min(100%, 300px);
+  line-height: 1;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.logo-accent {
+  width: 3px;
+  height: 38px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fbbf24 0%, #fb923c 45%, #f97316 100%);
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.22);
+  flex-shrink: 0;
+  transform: translateY(1px);
+}
+
+.logo-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.08rem;
+  min-width: 0;
+}
+
+.logo-brand-title {
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.32);
+}
+
+.logo-brand-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  opacity: 0.96;
+}
+
+.logo-root.logo-sm .logo-accent {
+  height: 30px;
+}
+
+.logo-root.logo-sm .logo-brand-title {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+}
+
+.logo-root.logo-sm .logo-brand-subtitle {
+  font-size: 0.64rem;
+}
+
+.logo-root.logo-md .logo-accent {
+  height: 34px;
+}
+
+.logo-root.logo-lg .logo-accent {
+  height: 42px;
+}
+
+.logo-root.logo-dark .logo-brand-title {
+  color: #111827;
+  text-shadow: none;
+}
+
+.logo-root.logo-dark .logo-brand-subtitle {
+  color: #475569;
+}
+
+.logo-root.logo-dark .logo-accent {
+  background: linear-gradient(180deg, #f97316 0%, #ea580c 100%);
+  box-shadow: 0 0 12px rgba(234, 88, 12, 0.18);
+}
+
+@media (max-width: 768px) {
+  .logo-root {
+    gap: 0.65rem;
+    padding: 0.22rem 0;
+  }
+  .logo-accent {
+    height: 28px;
+  }
+  .logo-root.logo-sm .logo-accent {
+    height: 26px;
+  }
+  .logo-brand-title {
+    font-size: 1rem;
+  }
+  .logo-brand-subtitle {
+    font-size: 0.64rem;
+  }
+}
