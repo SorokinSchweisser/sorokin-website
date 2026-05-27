@@ -62,6 +62,55 @@ body {
 .iso-badge { animation: badge-pulse 3.5s ease-in-out infinite; }
 
 /* ── Nav ── */
+.logo-root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+}
+
+.logo-root img,
+.logo-root span {
+  background: transparent !important;
+}
+
+.logo-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 68px;
+}
+
+/* Navbar layout helpers */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 72px;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .logo-image { max-height: 56px; }
+  .nav-links { display: none; }
+  .nav-inner { padding: 0 1rem; }
+}
+
 .nav-scrolled {
   background: rgba(255, 255, 255, 0.97) !important;
   backdrop-filter: blur(14px);
