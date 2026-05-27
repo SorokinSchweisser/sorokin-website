@@ -96,13 +96,14 @@ const services = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#1d6fa8" strokeWidth="1.75" className="w-8 h-8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 3v18M20 3v18" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 7v10M14 7v10" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 17h16" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13h2v5h14v-5h2v7H3v-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 13V8a2 2 0 012-2h6a2 2 0 012 2v5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 21v-4h6v4" />
       </svg>
     ),
-    title: "Geländer, Tore & Stahlkonstruktionen",
-    desc: "Geländer, Tore und Zäune fertige ich nach Maß und montiere sie direkt vor Ort. Treppengeländer, Hoftore oder Absperrungen: langlebig verschweißt, passgenau und sofort einsatzbereit.",
+    title: "Schweißarbeiten für Industrie & Gewerbe",
+    desc: "Ich unterstütze Metallbau- und Handwerksbetriebe als zuverlässiger Subunternehmer bei Schweißarbeiten. Auch für Industrie und Gewerbe biete ich mobile Schweißleistungen direkt vor Ort - präzise, termingerecht und mit geprüfter Qualifikation nach DIN EN ISO 9606-1.",
+    tags: ["Subunternehmer", "Industrie", "Gewerbe", "Mobil vor Ort"],
   },
 ];
 
@@ -571,10 +572,10 @@ export default function Home() {
                         Mit <strong style={{ color: "#111827" }}>WIG-Schweißen (141)</strong> entstehen
                         präzise, saubere Schweißnähte, die besonders für Edelstahl und Aluminium geeignet sind.{" "}
                         <strong style={{ color: "#111827" }}>MIG/MAG-Schweißen (131/135)</strong> ist
-                        die ideale Methode für stabile Stahlkonstruktionen, Reparaturen und robuste Metallarbeiten.
+                        die ideale Methode für stabile Metallkonstruktionen, Reparaturen und robuste Metallarbeiten.
                       </p>
                       <p className="text-sm leading-relaxed mb-7" style={{ color: "#6b7280" }}>
-                        Ob Geländer, Reparaturen, Sonderanfertigungen oder Metallkonstruktionen:
+                        Ob Reparaturen, Sonderanfertigungen oder Metallkonstruktionen:
                         Ich liefere zuverlässige Ergebnisse direkt vor Ort und bin auch als
                         Subunternehmer für Betriebe und Handwerksfirmen einsetzbar.
                       </p>
