@@ -384,16 +384,14 @@ export default function Home() {
       {/* ══ HERO ══ */}
       <section className="relative flex items-center overflow-hidden min-h-[68vh] md:min-h-screen">
 
-        {/* Background image.
-            Mobile: scale-[1.6] zooms into the central welding action so the bright
-            ceiling and empty floor (which object-cover shows on a portrait screen)
-            are cropped out. Desktop (md:): scale-100 + object-center → unchanged. */}
+        {/* Background image – object-cover + fill always fills the section fully
+            (it crops, never letterboxes), so there are no empty strips on any size. */}
         <div className="absolute inset-0 hero-img overflow-hidden">
           <Image
             src="/1c7885fd-0c4f-40ad-bf3a-bc579185acc9.jpg"
             alt="SOROKIN Schweißservice – professionelle Schweißarbeiten"
             fill
-            className="object-cover object-center scale-[1.6] md:scale-100"
+            className="object-cover object-center"
             priority
             quality={90}
             sizes="100vw"
