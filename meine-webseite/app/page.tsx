@@ -382,7 +382,7 @@ export default function Home() {
       </nav>
 
       {/* ══ HERO ══ */}
-      <section className="relative flex items-center overflow-hidden min-h-[100dvh] md:min-h-screen">
+      <section className="relative flex items-center overflow-hidden min-h-[100svh] md:min-h-screen">
 
         {/* Background image – object-cover + fill always fills the section fully
             (it crops, never letterboxes), so there are no empty strips on any size. */}
