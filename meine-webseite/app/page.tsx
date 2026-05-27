@@ -274,10 +274,20 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <a
                 href="tel:015114459165"
-                className={`btn-orange hidden sm:inline-flex px-5 py-2.5 rounded-full text-sm font-bold`}
+                className="inline-flex items-center justify-center rounded-full bg-[#E8650A] text-white shadow-sm md:hidden p-3"
+                aria-label="Anrufen"
+              >
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+              </a>
+
+              <a
+                href="tel:015114459165"
+                className="btn-orange hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-bold"
               >
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -286,7 +296,7 @@ export default function Home() {
               </a>
 
               <button
-                className={`md:hidden p-2 rounded-lg ${scrolled ? "text-gray-700" : "text-white"}`}
+                className={`md:hidden p-3 rounded-lg ${scrolled ? "text-gray-700" : "text-white"}`}
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Menü öffnen"
               >
@@ -349,10 +359,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "rgba(6, 12, 24, 0.65)" }} />
 
         {/* Content */}
-        <div
-          className="relative z-10 w-full max-w-7xl mx-auto"
-          style={{ padding: "9rem 3rem 9rem", textAlign: "center" }}
-        >
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 text-center">
           {/* ISO badge */}
           <div
             style={{
@@ -379,19 +386,19 @@ export default function Home() {
 
           {/* Headline – every line its own block */}
           <h1 style={{ margin: "0 0 28px 0", padding: 0 }}>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Schweißen &amp;
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Metallreparatur
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 900, lineHeight: 1.15, color: "#E8650A", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#E8650A", letterSpacing: "-0.01em" }}>
               Präzise.
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Zuverlässig.
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 900, lineHeight: 1.15, color: "#3B82F6", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#3B82F6", letterSpacing: "-0.01em" }}>
               Professionell.
             </span>
           </h1>
@@ -402,8 +409,8 @@ export default function Home() {
               fontSize: "1.05rem",
               color: "#a8b8cc",
               lineHeight: 1.65,
-              marginBottom: 44,
-              maxWidth: 480,
+              marginBottom: 32,
+              maxWidth: 540,
               marginLeft: "auto",
               marginRight: "auto",
             }}
