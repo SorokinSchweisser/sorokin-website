@@ -287,7 +287,7 @@ export default function Home() {
 
             <a href="#" className="flex items-center flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
               <Image
-                src="/logo.png"
+                src="/sorokin-logo.png"
                 alt="Sorokin Schweißer Logo"
                 width={612}
                 height={408}
@@ -1397,7 +1397,7 @@ export default function Home() {
             {/* Left – Logo + tagline + desc */}
             <div>
               <Image
-                src="/logo.png"
+                src="/sorokin-logo.png"
                 alt="Sorokin Schweißer Logo"
                 width={612}
                 height={408}

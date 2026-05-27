@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/sorokin-logo.png",
         width: 612,
         height: 408,
         alt: "SOROKIN Mobiler Schweißservice – Logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SOROKIN Mobiler Schweißservice | Menden (Sauerland)",
     description: "Zertifizierter mobiler Schweißservice – WIG, MAG, E-Schweißen und mehr. Direkt zu Ihnen.",
-    images: ["/logo.png"],
+    images: ["/sorokin-logo.png"],
   },
 };
 
