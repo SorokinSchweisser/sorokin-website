@@ -287,7 +287,7 @@ export default function Home() {
 
               <a
                 href="tel:015114459165"
-                className="btn-orange hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-bold"
+                className="btn-orange hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-bold whitespace-nowrap"
               >
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -385,20 +385,20 @@ export default function Home() {
           </div>
 
           {/* Headline – every line its own block */}
-          <h1 style={{ margin: "0 0 28px 0", padding: 0 }}>
-            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+          <h1 style={{ margin: "0 0 24px 0", padding: 0 }}>
+            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Schweißen &amp;
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Metallreparatur
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#E8650A", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#E8650A", letterSpacing: "-0.01em" }}>
               Präzise.
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
               Zuverlässig.
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 900, lineHeight: 1.15, color: "#3B82F6", letterSpacing: "-0.01em" }}>
+            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#3B82F6", letterSpacing: "-0.01em" }}>
               Professionell.
             </span>
           </h1>
@@ -641,8 +641,8 @@ export default function Home() {
                   style={{ background: "linear-gradient(135deg, rgba(232,101,10,0.18) 0%, rgba(29,111,168,0.10) 100%)", filter: "blur(24px)" }}
                 />
                 <div
-                  className="relative rounded-2xl overflow-hidden group"
-                  style={{ width: 420, height: 540, border: "2px solid rgba(232,101,10,0.3)", boxShadow: "0 32px 80px rgba(0,0,0,0.18)" }}
+                  className="relative rounded-2xl overflow-hidden group w-full"
+                  style={{ width: "100%", maxWidth: 420, minHeight: 480, border: "2px solid rgba(232,101,10,0.3)", boxShadow: "0 32px 80px rgba(0,0,0,0.18)" }}
                 >
                   <Image
                     src="/WhatsApp%20Image%202026-05-21%20at%2015.50.11%20Kopie%202.jpeg"
@@ -1182,12 +1182,12 @@ export default function Home() {
                         placeholder="Max Mustermann"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="form-input px-4 py-3"
+                        className="form-input w-full px-4 py-3"
                         style={{ background: "#f3f4f6", color: "#111827", border: "1px solid #e5e7eb" }}
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#374151" }}>
                           Telefon
@@ -1197,7 +1197,7 @@ export default function Home() {
                           placeholder="0123 456789"
                           value={formData.telefon}
                           onChange={(e) => setFormData({ ...formData, telefon: e.target.value })}
-                          className="form-input px-4 py-3"
+                          className="form-input w-full px-4 py-3"
                           style={{ background: "#f3f4f6", color: "#111827", border: "1px solid #e5e7eb" }}
                         />
                       </div>
@@ -1211,7 +1211,7 @@ export default function Home() {
                           placeholder="ihre@email.de"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="form-input px-4 py-3"
+                          className="form-input w-full px-4 py-3"
                           style={{ background: "#f3f4f6", color: "#111827", border: "1px solid #e5e7eb" }}
                         />
                       </div>
@@ -1227,7 +1227,7 @@ export default function Home() {
                         placeholder="Beschreiben Sie Ihren Auftrag: Material, Umfang, Ort..."
                         value={formData.beschreibung}
                         onChange={(e) => setFormData({ ...formData, beschreibung: e.target.value })}
-                        className="form-input px-4 py-3 resize-none"
+                        className="form-input w-full px-4 py-3 resize-none"
                         style={{ background: "#f3f4f6", color: "#111827", border: "1px solid #e5e7eb" }}
                       />
                     </div>
