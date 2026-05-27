@@ -250,8 +250,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="relative flex items-center justify-between h-18" style={{ height: 72 }}>
 
-            <a href="#" className="flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
-              <Logo size="sm" variant={scrolled ? "dark" : "light"} inline showSubtitle />
+            <a href="#" className="flex items-center flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
+              <Image
+                src="/logo.png"
+                alt="Sorokin Schweißer Logo"
+                width={612}
+                height={408}
+                priority
+                className="h-9 md:h-[50px] w-auto object-contain"
+              />
             </a>
 
             {/* Desktop links */}
@@ -642,8 +649,8 @@ export default function Home() {
                   style={{ background: "linear-gradient(135deg, rgba(232,101,10,0.18) 0%, rgba(29,111,168,0.10) 100%)", filter: "blur(24px)" }}
                 />
                 <div
-                  className="relative rounded-2xl overflow-hidden group w-full"
-                  style={{ width: "100%", maxWidth: 420, minHeight: 480, border: "2px solid rgba(232,101,10,0.3)", boxShadow: "0 32px 80px rgba(0,0,0,0.18)" }}
+                  className="relative rounded-2xl overflow-hidden group w-full max-w-[420px] h-80 md:h-[540px]"
+                  style={{ border: "2px solid rgba(232,101,10,0.3)", boxShadow: "0 32px 80px rgba(0,0,0,0.18)" }}
                 >
                   <Image
                     src="/WhatsApp%20Image%202026-05-21%20at%2015.50.11%20Kopie%202.jpeg"
