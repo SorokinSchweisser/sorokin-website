@@ -249,9 +249,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex items-center justify-between h-18" style={{ height: 72 }}>
 
-            <a href="#" className="flex-shrink-0 transition-opacity hover:opacity-80">
-              <Logo size="sm" variant={scrolled ? "dark" : "light"} />
-            </a>
+            <div className="flex-shrink-0 transition-opacity hover:opacity-80" aria-hidden="true" />
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-8">
