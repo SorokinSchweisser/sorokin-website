@@ -208,7 +208,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-18" style={{ height: 72 }}>
 
             <a href="#" className="flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
-              <Logo size="sm" variant={scrolled ? "dark" : "light"} />
+              <Logo size="sm" variant={scrolled ? "dark" : "light"} inline showSubtitle />
             </a>
 
             {/* Desktop links */}
@@ -947,7 +947,7 @@ export default function Home() {
 
             {/* Left – Logo + tagline + desc */}
             <div>
-              <Logo size="sm" variant="light" />
+              <Logo size="sm" variant="light" showSubtitle={false} />
               <p className="mt-4 text-sm font-semibold" style={{ color: "#94a3b8" }}>
                 Mobiler Schweißservice · Menden (Sauerland)
               </p>
