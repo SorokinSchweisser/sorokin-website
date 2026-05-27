@@ -656,7 +656,7 @@ export default function Home() {
                     src="/WhatsApp%20Image%202026-05-21%20at%2015.50.11%20Kopie%202.jpeg"
                     alt="Konstantin Sorokin – Geprüfter Schweißer · DIN EN ISO 9606-1"
                     fill
-                    className="object-cover object-[center_30%] md:object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    className="object-cover object-[center_65%] md:object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
                     quality={90}
                     sizes="(max-width: 768px) 100vw, 45vw"
                   />
