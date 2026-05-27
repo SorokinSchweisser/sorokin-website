@@ -1414,9 +1414,9 @@ export default function Home() {
 
             {/* Middle – Nav */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#475569" }}>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#475569" }}>
                 Navigation
-              </h4>
+              </h3>
               <div className="flex flex-col gap-3">
                 {navLinks.map((l) => (
                   <a
@@ -1433,9 +1433,9 @@ export default function Home() {
 
             {/* Right – Contact */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#475569" }}>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#475569" }}>
                 Kontakt
-              </h4>
+              </h3>
               <div className="flex flex-col gap-3">
                 <a
                   href="tel:015114459165"
@@ -1479,21 +1479,21 @@ export default function Home() {
         <div style={{ background: "#0f0f1a" }}>
           <div
             className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-            style={{ color: "#475569" }}
+            style={{ color: "#94a3b8" }}
           >
             <span>© 2026 SOROKIN Mobiler Schweißservice · Konstantin Sorokin</span>
             <div className="flex gap-5">
               <button
                 onClick={() => setModal("impressum")}
                 className="footer-link"
-                style={{ color: "#64748b" }}
+                style={{ color: "#94a3b8" }}
               >
                 Impressum
               </button>
               <button
                 onClick={() => setModal("datenschutz")}
                 className="footer-link"
-                style={{ color: "#64748b" }}
+                style={{ color: "#94a3b8" }}
               >
                 Datenschutz
               </button>
