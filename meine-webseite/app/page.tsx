@@ -319,7 +319,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <a
                 href="tel:015114459165"
-                className="inline-flex items-center justify-center rounded-full bg-[#E8650A] text-white shadow-sm md:hidden p-3"
+                className="inline-flex items-center justify-center rounded-full bg-[#E8650A] text-white shadow-sm md:hidden p-3 cta-shimmer"
                 aria-label="Anrufen"
               >
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
@@ -329,7 +329,7 @@ export default function Home() {
 
               <a
                 href="tel:015114459165"
-                className="btn-orange !hidden md:!inline-flex px-5 py-2.5 rounded-full text-sm font-bold whitespace-nowrap"
+                className="btn-orange !hidden md:!inline-flex px-5 py-2.5 rounded-full text-sm font-bold whitespace-nowrap cta-shimmer"
               >
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -369,7 +369,7 @@ export default function Home() {
               ))}
               <a
                 href="tel:015114459165"
-                className="btn-orange px-5 py-3 rounded-full text-sm font-bold mt-2 justify-center"
+                className="btn-orange px-5 py-3 rounded-full text-sm font-bold mt-2 justify-center cta-shimmer"
               >
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -463,6 +463,7 @@ export default function Home() {
           {/* CTA button */}
           <a
             href="#kontakt"
+            className="cta-shimmer"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -1297,6 +1298,7 @@ export default function Home() {
                     {/* Submit – Premium */}
                     <button
                       type="submit"
+                      className="cta-shimmer"
                       style={{
                         width: "100%",
                         display: "flex",

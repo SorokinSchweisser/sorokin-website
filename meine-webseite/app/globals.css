@@ -161,6 +161,37 @@ body {
 }
 .btn-orange:active { transform: translateY(0); }
 
+/* ── Premium shimmer on orange CTA buttons ── */
+.cta-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.cta-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-20deg);
+  animation: ctaShimmer 4s infinite;
+  pointer-events: none;
+}
+@keyframes ctaShimmer {
+  0%   { transform: translateX(-100%) skewX(-20deg); }
+  20%  { transform: translateX(250%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-shimmer::after { animation: none; display: none; }
+}
+
 .btn-blue {
   background: #1d6fa8;
   color: #fff;
