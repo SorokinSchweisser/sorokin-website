@@ -412,6 +412,8 @@ export default function Home() {
               padding: "6px 16px",
               borderRadius: 999,
               background: "rgba(255,255,255,0.10)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
               border: "1px solid rgba(255,255,255,0.25)",
               color: "#93c5fd",
               fontSize: 11,
