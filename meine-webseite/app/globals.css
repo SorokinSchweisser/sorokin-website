@@ -54,6 +54,27 @@ body {
 }
 .hero-img { animation: heroZoom 24s ease-out both; }
 
+/* ── Hero headline word reveal ── */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.5em) scale(0.96);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.hero-word.is-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-word {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ── ISO badge pulse ── */
 @keyframes badge-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(29, 111, 168, 0.25); }

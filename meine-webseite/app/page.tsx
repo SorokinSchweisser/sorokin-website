@@ -145,6 +145,21 @@ const uspItems = [
   },
 ];
 
+/* ── Hero headline – word-by-word reveal (white / orange / white / blue) ── */
+const heroLines: Array<{ color: string; words: Array<{ text: string; delay: number }> }> = (() => {
+  let i = 0;
+  return [
+    { words: ["Schweißen", "&"], color: "#ffffff" },
+    { words: ["Metallreparatur"], color: "#ffffff" },
+    { words: ["Präzise."], color: "#f97316" },
+    { words: ["Zuverlässig."], color: "#ffffff" },
+    { words: ["Professionell."], color: "#1d6fa8" },
+  ].map((line) => ({
+    color: line.color,
+    words: line.words.map((text) => ({ text, delay: i++ * 0.08 })),
+  }));
+})();
+
 const galleryImages = [
   "/WhatsApp%20Image%202026-05-21%20at%2015.50.11.jpeg",
   "/PHOTO-2026-05-21-22-38-23.jpg",
@@ -196,6 +211,7 @@ const StarIcon = () => (
 /* ══════════════════════════════════════════════ MAIN COMPONENT */
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [heroAnimate, setHeroAnimate] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", telefon: "", email: "", beschreibung: "" });
   const [sent, setSent] = useState(false);
@@ -203,6 +219,12 @@ export default function Home() {
   const [liveData, setLiveData] = useState<ReviewsApiResponse | null>(null);
 
   useReveal();
+
+  // Trigger the hero headline reveal once, after the initial (hidden) paint.
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setHeroAnimate(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   useEffect(() => {
     fetch("/api/reviews")
@@ -391,23 +413,24 @@ export default function Home() {
             DIN EN ISO 9606-1 Zertifiziert
           </div>
 
-          {/* Headline – every line its own block */}
+          {/* Headline – animated word-by-word reveal */}
           <h1 style={{ margin: "0 0 24px 0", padding: 0 }}>
-            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
-              Schweißen &amp;
-            </span>
-            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
-              Metallreparatur
-            </span>
-            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#E8650A", letterSpacing: "-0.01em" }}>
-              Präzise.
-            </span>
-            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", letterSpacing: "-0.01em" }}>
-              Zuverlässig.
-            </span>
-            <span style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: "#3B82F6", letterSpacing: "-0.01em" }}>
-              Professionell.
-            </span>
+            {heroLines.map((line, li) => (
+              <span
+                key={li}
+                style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: line.color, letterSpacing: "-0.01em" }}
+              >
+                {line.words.map((w, k) => (
+                  <span
+                    key={k}
+                    className={`hero-word${heroAnimate ? " is-in" : ""}`}
+                    style={{ transitionDelay: `${w.delay}s`, marginRight: "0.22em" }}
+                  >
+                    {w.text}
+                  </span>
+                ))}
+              </span>
+            ))}
           </h1>
 
           {/* Subtext */}
