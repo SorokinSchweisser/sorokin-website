@@ -145,20 +145,12 @@ const uspItems = [
   },
 ];
 
-/* ── Hero headline – word-by-word reveal (white / orange / white / blue) ── */
-const heroLines: Array<{ color: string; words: Array<{ text: string; delay: number }> }> = (() => {
-  let i = 0;
-  return [
-    { words: ["Schweißen", "&"], color: "#ffffff" },
-    { words: ["Metallreparatur"], color: "#ffffff" },
-    { words: ["Präzise."], color: "#f97316" },
-    { words: ["Zuverlässig."], color: "#ffffff" },
-    { words: ["Professionell."], color: "#1d6fa8" },
-  ].map((line) => ({
-    color: line.color,
-    words: line.words.map((text) => ({ text, delay: i++ * 0.08 })),
-  }));
-})();
+/* ── Hero headline – looping typewriter words (orange / white / blue) ── */
+const TYPE_WORDS: Array<{ text: string; color: string }> = [
+  { text: "Präzise.", color: "#f97316" },
+  { text: "Zuverlässig.", color: "#ffffff" },
+  { text: "Professionell.", color: "#1d6fa8" },
+];
 
 const galleryImages = [
   "/WhatsApp%20Image%202026-05-21%20at%2015.50.11.jpeg",
@@ -211,7 +203,9 @@ const StarIcon = () => (
 /* ══════════════════════════════════════════════ MAIN COMPONENT */
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [heroAnimate, setHeroAnimate] = useState(false);
+  const [typeIndex, setTypeIndex] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [deleting, setDeleting] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", telefon: "", email: "", beschreibung: "" });
   const [sent, setSent] = useState(false);
@@ -220,11 +214,31 @@ export default function Home() {
 
   useReveal();
 
-  // Trigger the hero headline reveal once, after the initial (hidden) paint.
+  // Looping typewriter: type → hold → delete → next word, forever.
   useEffect(() => {
-    const id = requestAnimationFrame(() => setHeroAnimate(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
+    const full = TYPE_WORDS[typeIndex].text;
+
+    // Fully typed → hold, then start deleting.
+    if (!deleting && typed === full) {
+      const t = window.setTimeout(() => setDeleting(true), 1800);
+      return () => window.clearTimeout(t);
+    }
+
+    // Fully deleted → advance to the next word.
+    if (deleting && typed === "") {
+      setDeleting(false);
+      setTypeIndex((i) => (i + 1) % TYPE_WORDS.length);
+      return;
+    }
+
+    // Type the next char (≈95ms) or delete one (≈50ms, faster).
+    const t = window.setTimeout(() => {
+      setTyped((prev) =>
+        deleting ? full.slice(0, prev.length - 1) : full.slice(0, prev.length + 1)
+      );
+    }, deleting ? 50 : 95);
+    return () => window.clearTimeout(t);
+  }, [typed, deleting, typeIndex]);
 
   useEffect(() => {
     fetch("/api/reviews")
@@ -413,24 +427,21 @@ export default function Home() {
             DIN EN ISO 9606-1 Zertifiziert
           </div>
 
-          {/* Headline – animated word-by-word reveal */}
-          <h1 style={{ margin: "0 0 24px 0", padding: 0 }}>
-            {heroLines.map((line, li) => (
-              <span
-                key={li}
-                style={{ display: "block", fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 900, lineHeight: 1.15, color: line.color, letterSpacing: "-0.01em" }}
-              >
-                {line.words.map((w, k) => (
-                  <span
-                    key={k}
-                    className={`hero-word${heroAnimate ? " is-in" : ""}`}
-                    style={{ transitionDelay: `${w.delay}s`, marginRight: "0.22em" }}
-                  >
-                    {w.text}
-                  </span>
-                ))}
-              </span>
-            ))}
+          {/* Headline – static top lines + looping typewriter line */}
+          <h1 className="font-black tracking-tight leading-[1.1]" style={{ margin: "0 0 24px 0", padding: 0 }}>
+            <span className="block text-3xl md:text-6xl lg:text-7xl" style={{ color: "#ffffff" }}>
+              Schweißen &amp;
+            </span>
+            <span className="block text-3xl md:text-6xl lg:text-7xl" style={{ color: "#ffffff" }}>
+              Metallreparatur
+            </span>
+            <span
+              className="block text-3xl md:text-6xl lg:text-7xl"
+              style={{ color: TYPE_WORDS[typeIndex].color, minHeight: "1.1em" }}
+            >
+              {typed}
+              <span className="hero-caret" style={{ color: "#f97316", fontWeight: 700 }}>|</span>
+            </span>
           </h1>
 
           {/* Subtext */}
