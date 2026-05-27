@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Logo from "./components/Logo";
 
 /* ── Google Reviews API types ── */
 interface LiveReview {
@@ -248,7 +247,7 @@ export default function Home() {
         style={{ background: scrolled ? undefined : "transparent" }}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="relative flex items-center justify-between h-[72px] md:h-[92px]">
+          <div className="relative flex items-center justify-between h-[84px] md:h-[104px]">
 
             <a href="#" className="flex items-center flex-shrink-0 transition-opacity hover:opacity-80" aria-label="Homepage">
               <Image
@@ -257,7 +256,7 @@ export default function Home() {
                 width={612}
                 height={408}
                 priority
-                className="h-14 md:h-[76px] w-auto object-contain"
+                className="h-[76px] md:h-[94px] w-auto object-contain"
               />
             </a>
 
@@ -1358,7 +1357,13 @@ export default function Home() {
 
             {/* Left – Logo + tagline + desc */}
             <div>
-              <Logo size="sm" variant="light" showSubtitle={false} />
+              <Image
+                src="/logo.png"
+                alt="Sorokin Schweißer Logo"
+                width={612}
+                height={408}
+                className="h-24 w-auto object-contain"
+              />
               <p className="mt-4 text-sm font-semibold" style={{ color: "#94a3b8" }}>
                 Mobiler Schweißservice · Menden (Sauerland)
               </p>
