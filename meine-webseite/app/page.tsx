@@ -1396,7 +1396,9 @@ export default function Home() {
                 alt="Sorokin Schweißer Logo"
                 width={612}
                 height={408}
-                className="h-24 w-auto object-contain"
+                /* logo.png has ~17% transparent padding each side; -ml-6 offsets the
+                   left padding so the visible mark left-aligns with the text below. */
+                className="h-24 w-auto object-contain -ml-6"
               />
               <p className="mt-4 text-sm font-semibold" style={{ color: "#94a3b8" }}>
                 Mobiler Schweißservice · Menden (Sauerland)
