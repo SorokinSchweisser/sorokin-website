@@ -292,6 +292,7 @@ export default function Home() {
                 width={612}
                 height={408}
                 priority
+                sizes="150px"
                 className="h-[76px] md:h-[94px] w-auto object-contain"
               />
             </a>
@@ -868,7 +869,7 @@ export default function Home() {
                     fill
                     style={{ objectFit: "cover" }}
                     quality={70}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 33vw, 50vw"
                   />
                 </div>
               </div>
@@ -1402,6 +1403,7 @@ export default function Home() {
                 height={408}
                 /* logo.png has ~17% transparent padding each side; -ml-6 offsets the
                    left padding so the visible mark left-aligns with the text below. */
+                sizes="150px"
                 className="h-24 w-auto object-contain -ml-6"
               />
               <p className="mt-4 text-sm font-semibold" style={{ color: "#94a3b8" }}>
