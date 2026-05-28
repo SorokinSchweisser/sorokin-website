@@ -1512,27 +1512,147 @@ export default function Home() {
           onClick={() => setModal(null)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl p-8"
+            className="relative w-full max-w-2xl rounded-2xl p-8 max-h-[85vh] overflow-y-auto"
             style={{ background: "#fff", boxShadow: "0 24px 60px rgba(0,0,0,0.25)" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setModal(null)}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-gray-100"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-white hover:bg-gray-100"
               style={{ color: "#6b7280" }}
+              aria-label="Schließen"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <h3 className="font-black text-xl mb-4" style={{ color: "#111827" }}>
+            <h3 className="font-black text-xl mb-5" style={{ color: "#111827" }}>
               {modal === "impressum" ? "Impressum" : "Datenschutzerklärung"}
             </h3>
-            <p style={{ color: "#6b7280" }}>
-              {modal === "impressum"
-                ? "Impressum wird in Kürze ergänzt."
-                : "Datenschutzerklärung wird in Kürze ergänzt."}
-            </p>
+            {modal === "impressum" ? (
+              <div className="space-y-5 text-sm leading-relaxed" style={{ color: "#374151" }}>
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Angaben gemäß § 5 DDG</h4>
+                  <p>
+                    Konstantin Sorokin<br />
+                    Mobiler Schweißservice<br />
+                    Regerstraße 24<br />
+                    58710 Menden (Sauerland)
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Kontakt</h4>
+                  <p>
+                    Telefon:{" "}
+                    <a href="tel:015114459165" className="hover:underline" style={{ color: "#0770b0" }}>
+                      01511 4459165
+                    </a>
+                    <br />
+                    E-Mail:{" "}
+                    <a href="mailto:info@sorokinschweisser.de" className="hover:underline" style={{ color: "#0770b0" }}>
+                      info@sorokinschweisser.de
+                    </a>
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Umsatzsteuer-ID</h4>
+                  <p>
+                    Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+                    <strong style={{ color: "#111827" }}>DE421894891</strong>
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Tätigkeit</h4>
+                  <p>
+                    Selbstständiges Setzen von industriellen Schweißnähten, Metallverarbeitung und
+                    Reparaturschweißen.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>
+                    Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+                  </h4>
+                  <p>
+                    Konstantin Sorokin<br />
+                    Anschrift wie oben.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>EU-Streitschlichtung</h4>
+                  <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
+                    bereit:{" "}
+                    <a
+                      href="https://ec.europa.eu/consumers/odr/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline break-all"
+                      style={{ color: "#0770b0" }}
+                    >
+                      https://ec.europa.eu/consumers/odr/
+                    </a>
+                    . Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>
+                    Verbraucherstreitbeilegung / Universalschlichtungsstelle
+                  </h4>
+                  <p>
+                    Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor
+                    einer Verbraucherschlichtungsstelle teilzunehmen.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Haftung für Inhalte</h4>
+                  <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen
+                    Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir
+                    als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
+                    fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
+                    rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung
+                    der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon
+                    unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+                    Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von
+                    entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Haftung für Links</h4>
+                  <p>
+                    Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf
+                    deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
+                    Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist
+                    stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die
+                    verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche
+                    Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+                    Verlinkung nicht erkennbar.
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Urheberrecht</h4>
+                  <p>
+                    Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+                    unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung,
+                    Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+                    bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                    Downloads und Kopien dieser Seite sind nur für den privaten, nicht
+                    kommerziellen Gebrauch gestattet.
+                  </p>
+                </section>
+              </div>
+            ) : (
+              <p style={{ color: "#6b7280" }}>Datenschutzerklärung wird in Kürze ergänzt.</p>
+            )}
           </div>
         </div>
       )}
