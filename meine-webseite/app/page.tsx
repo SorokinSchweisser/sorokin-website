@@ -207,8 +207,10 @@ export default function Home() {
   const [typed, setTyped] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", telefon: "", email: "", beschreibung: "" });
+  const [formData, setFormData] = useState({ name: "", telefon: "", email: "", beschreibung: "", website: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [modal, setModal] = useState<"impressum" | "datenschutz" | null>(null);
   const [liveData, setLiveData] = useState<ReviewsApiResponse | null>(null);
 
@@ -253,14 +255,28 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  function handleSubmit(e: { preventDefault(): void }) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Anfrage von ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nTelefon: ${formData.telefon}\nE-Mail: ${formData.email}\n\nAuftragsbeschreibung:\n${formData.beschreibung}`
-    );
-    window.location.href = `mailto:schweisserservice24@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    if (sending) return;
+    setError(null);
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setError(data.error || "Versand fehlgeschlagen. Bitte versuchen Sie es erneut.");
+        return;
+      }
+      setSent(true);
+    } catch {
+      setError("Netzwerkfehler. Bitte versuchen Sie es erneut oder rufen Sie uns an.");
+    } finally {
+      setSending(false);
+    }
   }
 
   const displayReviews = liveData?.reviews ?? reviews;
@@ -1070,8 +1086,8 @@ export default function Home() {
                     </svg>
                   ),
                   label: "E-Mail",
-                  value: "schweisserservice24@gmail.com",
-                  href: "mailto:schweisserservice24@gmail.com",
+                  value: "info@sorokinschweisser.de",
+                  href: "mailto:info@sorokinschweisser.de",
                 },
                 {
                   icon: (
@@ -1238,6 +1254,20 @@ export default function Home() {
                   <>
                     <h3 className="font-bold text-xl" style={{ color: "#111827" }}>Kostenlose Anfrage</h3>
 
+                    {/* Honeypot — invisible to humans, bots fill it and get silently dropped */}
+                    <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                      <label>
+                        Website (bitte freilassen)
+                        <input
+                          type="text"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          value={formData.website}
+                          onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                        />
+                      </label>
+                    </div>
+
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#374151" }}>
                         Ihr Name *
@@ -1298,9 +1328,28 @@ export default function Home() {
                       />
                     </div>
 
+                    {/* Error message */}
+                    {error && (
+                      <div
+                        role="alert"
+                        style={{
+                          padding: "12px 14px",
+                          borderRadius: 10,
+                          background: "rgba(239,68,68,0.08)",
+                          border: "1px solid rgba(239,68,68,0.3)",
+                          color: "#b91c1c",
+                          fontSize: 14,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {error}
+                      </div>
+                    )}
+
                     {/* Submit – Premium */}
                     <button
                       type="submit"
+                      disabled={sending}
                       className="cta-shimmer"
                       style={{
                         width: "100%",
@@ -1316,11 +1365,13 @@ export default function Home() {
                         fontSize: "0.975rem",
                         letterSpacing: "0.02em",
                         border: "none",
-                        cursor: "pointer",
+                        cursor: sending ? "not-allowed" : "pointer",
+                        opacity: sending ? 0.7 : 1,
                         boxShadow: "0 6px 22px rgba(232,101,10,0.32), 0 1px 4px rgba(0,0,0,0.08)",
-                        transition: "background 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease",
+                        transition: "background 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease, opacity 0.2s ease",
                       }}
                       onMouseEnter={(e) => {
+                        if (sending) return;
                         const el = e.currentTarget as HTMLButtonElement;
                         el.style.background = "#cf5808";
                         el.style.transform = "translateY(-2px)";
@@ -1333,10 +1384,12 @@ export default function Home() {
                         el.style.boxShadow = "0 6px 22px rgba(232,101,10,0.32), 0 1px 4px rgba(0,0,0,0.08)";
                       }}
                     >
-                      Jetzt Anfrage stellen
-                      <svg viewBox="0 0 20 20" fill="currentColor" style={{ width: 17, height: 17, flexShrink: 0 }}>
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
+                      {sending ? "Wird gesendet…" : "Jetzt Anfrage stellen"}
+                      {!sending && (
+                        <svg viewBox="0 0 20 20" fill="currentColor" style={{ width: 17, height: 17, flexShrink: 0 }}>
+                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      )}
                     </button>
 
                     {/* Trust strip */}
