@@ -95,29 +95,64 @@ export async function POST(req: Request) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: email, // Konstantin kann direkt antworten
-      subject: `Neue Anfrage von ${name}`,
+      subject: `Neue Anfrage von ${name} – sorokinschweisser.de`,
       text:
-        `Neue Anfrage über das Kontaktformular auf sorokinschweisser.de\n\n` +
+        `Neue Kontaktanfrage über sorokinschweisser.de\n\n` +
         `Name:    ${name}\n` +
         `Telefon: ${telefon}\n` +
         `E-Mail:  ${email}\n\n` +
-        `Auftragsbeschreibung:\n${beschreibung}\n`,
-      html: `<!DOCTYPE html><html><body style="margin:0;padding:24px;background:#f9fafb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif;color:#111827;">
-  <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;padding:28px;box-shadow:0 4px 20px rgba(16,24,40,0.06);">
-    <h2 style="margin:0 0 4px 0;color:#0770b0;font-size:20px;">Neue Anfrage</h2>
-    <p style="margin:0 0 20px 0;color:#6b7280;font-size:13px;">sorokinschweisser.de · Kontaktformular</p>
-    <table style="width:100%;border-collapse:collapse;font-size:14px;">
-      <tr><td style="padding:6px 0;color:#6b7280;width:92px;">Name</td><td style="padding:6px 0;font-weight:600;">${esc(name)}</td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">Telefon</td><td style="padding:6px 0;font-weight:600;"><a href="tel:${esc(telefon)}" style="color:#0770b0;text-decoration:none;">${esc(telefon)}</a></td></tr>
-      <tr><td style="padding:6px 0;color:#6b7280;">E-Mail</td><td style="padding:6px 0;font-weight:600;"><a href="mailto:${esc(email)}" style="color:#0770b0;text-decoration:none;">${esc(email)}</a></td></tr>
+        `Auftragsbeschreibung:\n${beschreibung}\n\n` +
+        `--\nAntworten auf diese E-Mail gehen direkt an ${email}.\n`,
+      // Clean transactional HTML — table-based, all-inline CSS, no external
+      // assets. Phone/email rendered as PLAIN text spans (no <a tel:>/mailto:)
+      // because Gmail wraps those links with its own styling and applies a
+      // strikethrough when it can't validate the value. format-detection meta
+      // tells mail clients not to auto-decorate values either.
+      html: `<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+<title>Neue Kontaktanfrage</title>
+</head>
+<body style="margin:0;padding:0;background:#f5f7fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,Arial,sans-serif;color:#111827;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5f7fa;">
+  <tr><td align="center" style="padding:28px 12px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;">
+      <tr><td style="padding:26px 28px 6px 28px;">
+        <div style="font-size:12px;font-weight:600;color:#0770b0;letter-spacing:0.10em;text-transform:uppercase;margin:0 0 6px 0;">sorokinschweisser.de</div>
+        <div style="font-size:19px;font-weight:700;color:#111827;line-height:1.3;margin:0;">Neue Kontaktanfrage</div>
+      </td></tr>
+      <tr><td style="padding:14px 28px 4px 28px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+          <tr>
+            <td width="90" style="padding:10px 0;color:#6b7280;font-size:13px;font-weight:500;vertical-align:top;border-bottom:1px solid #f3f4f6;">Name</td>
+            <td style="padding:10px 0;color:#111827;font-size:14px;font-weight:600;vertical-align:top;border-bottom:1px solid #f3f4f6;">${esc(name)}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;color:#6b7280;font-size:13px;font-weight:500;vertical-align:top;border-bottom:1px solid #f3f4f6;">Telefon</td>
+            <td style="padding:10px 0;color:#111827;font-size:14px;font-weight:600;vertical-align:top;border-bottom:1px solid #f3f4f6;"><span style="color:#111827;text-decoration:none;">${esc(telefon)}</span></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;color:#6b7280;font-size:13px;font-weight:500;vertical-align:top;">E-Mail</td>
+            <td style="padding:10px 0;color:#111827;font-size:14px;font-weight:600;vertical-align:top;"><span style="color:#111827;text-decoration:none;">${esc(email)}</span></td>
+          </tr>
+        </table>
+      </td></tr>
+      <tr><td style="padding:18px 28px 8px 28px;">
+        <div style="font-size:11px;font-weight:700;color:#6b7280;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 10px 0;">Auftragsbeschreibung</div>
+        <div style="font-size:14px;color:#374151;line-height:1.55;white-space:pre-wrap;background:#f9fafb;border:1px solid #f3f4f6;border-radius:8px;padding:14px 16px;">${esc(beschreibung)}</div>
+      </td></tr>
+      <tr><td style="padding:8px 28px 26px 28px;">
+        <div style="font-size:12px;color:#9ca3af;line-height:1.5;">Antworten auf diese E-Mail gehen direkt an den Absender.</div>
+      </td></tr>
     </table>
-    <div style="margin-top:20px;padding:16px;background:#f9fafb;border-left:3px solid #f97316;border-radius:6px;">
-      <div style="color:#6b7280;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:8px;">Auftragsbeschreibung</div>
-      <div style="color:#111827;white-space:pre-wrap;line-height:1.55;font-size:14px;">${esc(beschreibung)}</div>
-    </div>
-    <p style="color:#9ca3af;font-size:12px;margin:18px 0 0 0;">Antworten an diese E-Mail gehen direkt an ${esc(email)}.</p>
-  </div>
-</body></html>`,
+  </td></tr>
+</table>
+</body>
+</html>`,
     });
 
     if (result.error) {
