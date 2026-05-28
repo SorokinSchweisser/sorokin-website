@@ -212,6 +212,8 @@ export default function Home() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [modal, setModal] = useState<"impressum" | "datenschutz" | null>(null);
+  const [consent, setConsent] = useState<"all" | "necessary" | null>(null);
+  const [consentReady, setConsentReady] = useState(false);
   const [liveData, setLiveData] = useState<ReviewsApiResponse | null>(null);
 
   useReveal();
@@ -248,6 +250,22 @@ export default function Home() {
       .then((data: ReviewsApiResponse) => setLiveData(data))
       .catch(() => { /* silently fall back to static reviews */ });
   }, []);
+
+  // Cookie consent: load saved choice from localStorage on mount.
+  // Both server and initial client render see consentReady=false so the
+  // banner / map-placeholder render consistently (no hydration mismatch).
+  useEffect(() => {
+    try {
+      const s = localStorage.getItem("sorokin-consent");
+      if (s === "all" || s === "necessary") setConsent(s);
+    } catch { /* localStorage may be unavailable (privacy mode) */ }
+    setConsentReady(true);
+  }, []);
+
+  const chooseConsent = (c: "all" | "necessary") => {
+    setConsent(c);
+    try { localStorage.setItem("sorokin-consent", c); } catch { /* ignore */ }
+  };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
@@ -1425,18 +1443,74 @@ export default function Home() {
             <div style={{ width: 44, height: 3, background: "#E8650A", borderRadius: 2, margin: "0 auto" }} />
           </div>
 
-          {/* Map */}
+          {/* Map (consent-gated — iframe only loads when user opted in) */}
           <div style={{ borderRadius: 12, overflow: "hidden", border: "2px solid #E8650A", boxShadow: "0 8px 40px rgba(0,0,0,0.5)" }}>
-            <iframe
-              title="SOROKIN Mobiler Schweißservice – Menden"
-              src="https://maps.google.com/maps?q=Regerstra%C3%9Fe+24,+58710+Menden&output=embed&hl=de&z=15"
-              width="100%"
-              height="420"
-              style={{ border: 0, display: "block" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            {consentReady && consent === "all" ? (
+              <iframe
+                title="SOROKIN Mobiler Schweißservice – Menden"
+                src="https://maps.google.com/maps?q=Regerstra%C3%9Fe+24,+58710+Menden&output=embed&hl=de&z=15"
+                width="100%"
+                height="420"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div
+                style={{
+                  width: "100%",
+                  height: 420,
+                  background: "#1e293b",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 24,
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ maxWidth: 380 }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5" style={{ width: 40, height: 40, margin: "0 auto 16px auto" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                  <p style={{ color: "#cbd5e1", fontSize: 14, margin: "0 0 6px 0", lineHeight: 1.5 }}>
+                    Google Maps wird erst nach Ihrer Zustimmung geladen.
+                  </p>
+                  <p style={{ color: "#94a3b8", fontSize: 12, margin: "0 0 18px 0", lineHeight: 1.5 }}>
+                    Beim Aktivieren werden Daten an Google übertragen. Details in der{" "}
+                    <button
+                      type="button"
+                      onClick={() => setModal("datenschutz")}
+                      style={{ background: "none", border: "none", padding: 0, color: "#cbd5e1", textDecoration: "underline", cursor: "pointer", font: "inherit" }}
+                    >
+                      Datenschutzerklärung
+                    </button>.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => chooseConsent("all")}
+                    style={{
+                      background: "#0770b0",
+                      color: "#ffffff",
+                      border: "none",
+                      borderRadius: 8,
+                      padding: "10px 22px",
+                      fontSize: 14,
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      transition: "background 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#085d91")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "#0770b0")}
+                  >
+                    Karte aktivieren
+                  </button>
+                  <div style={{ marginTop: 14, fontSize: 11, color: "#64748b" }}>
+                    Standort: Regerstraße 24, 58710 Menden (Sauerland)
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
         </div>
@@ -1558,6 +1632,76 @@ export default function Home() {
       </footer>
 
       {/* ══ MODAL ══ */}
+      {/* ══ COOKIE CONSENT BANNER ══ */}
+      {consentReady && !consent && (
+        <div
+          aria-label="Cookie-Hinweis"
+          className="fixed bottom-4 left-4 right-4 sm:right-auto sm:bottom-6 sm:left-6 z-50"
+          style={{ maxWidth: 400 }}
+        >
+          <div
+            className="rounded-2xl"
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e5e7eb",
+              boxShadow: "0 24px 60px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.08)",
+              padding: 22,
+            }}
+          >
+            <h3 className="font-bold text-base" style={{ color: "#111827", marginBottom: 8 }}>
+              Cookies &amp; Datenschutz
+            </h3>
+            <p className="text-sm" style={{ color: "#4b5563", lineHeight: 1.55, marginBottom: 16 }}>
+              Wir verwenden ausschließlich technisch notwendige Cookies. Mit „Alle akzeptieren"
+              laden wir zusätzlich die Google-Maps-Karte unseres Standorts. Details in der{" "}
+              <button
+                type="button"
+                onClick={() => setModal("datenschutz")}
+                className="underline hover:no-underline"
+                style={{ background: "none", border: "none", padding: 0, color: "#0770b0", cursor: "pointer", fontWeight: 600, font: "inherit" }}
+              >
+                Datenschutzerklärung
+              </button>
+              .
+            </p>
+            <div className="flex flex-col-reverse sm:flex-row gap-2">
+              <button
+                type="button"
+                onClick={() => chooseConsent("necessary")}
+                className="flex-1 rounded-lg text-sm font-bold transition-colors"
+                style={{
+                  background: "#ffffff",
+                  color: "#374151",
+                  border: "1px solid #d1d5db",
+                  padding: "10px 16px",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#f9fafb")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#ffffff")}
+              >
+                Nur notwendige Cookies
+              </button>
+              <button
+                type="button"
+                onClick={() => chooseConsent("all")}
+                className="flex-1 rounded-lg text-sm font-bold transition-colors"
+                style={{
+                  background: "#0770b0",
+                  color: "#ffffff",
+                  border: "1px solid #0770b0",
+                  padding: "10px 16px",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#085d91")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#0770b0")}
+              >
+                Alle akzeptieren
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {modal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-6"
