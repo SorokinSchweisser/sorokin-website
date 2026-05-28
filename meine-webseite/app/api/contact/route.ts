@@ -7,9 +7,9 @@ export const runtime = "nodejs";
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "info@sorokinschweisser.de";
 
 // FROM address. Default to Resend's verified onboarding sender so the form
-// still works before the user verifies their own domain at resend.com.
-// Once sorokinschweisser.de is verified there, set CONTACT_FROM_EMAIL to
-// something like:  SOROKIN Kontaktformular <kontakt@sorokinschweisser.de>
+// still works before the customer's own domain is verified at resend.com.
+// Once sorokinschweisser.de is verified there, set CONTACT_FROM_EMAIL to:
+//   SOROKIN Kontaktformular <info@sorokinschweisser.de>
 const FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL ||
   "SOROKIN Kontaktformular <onboarding@resend.dev>";
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
     const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
-      replyTo: email, // Konstantin kann direkt antworten
+      replyTo: TO_EMAIL, // Per user instruction: alle Mail-Felder auf info@
       subject: `Neue Anfrage von ${name} – sorokinschweisser.de`,
       text:
         `Neue Kontaktanfrage über sorokinschweisser.de\n\n` +
@@ -102,7 +102,7 @@ export async function POST(req: Request) {
         `Telefon: ${telefon}\n` +
         `E-Mail:  ${email}\n\n` +
         `Auftragsbeschreibung:\n${beschreibung}\n\n` +
-        `--\nAntworten auf diese E-Mail gehen direkt an ${email}.\n`,
+        `--\nE-Mail-Adresse des Anfragenden: ${email}\n`,
       // Clean transactional HTML — table-based, all-inline CSS, no external
       // assets. Phone/email rendered as PLAIN text spans (no <a tel:>/mailto:)
       // because Gmail wraps those links with its own styling and applies a
@@ -146,7 +146,7 @@ export async function POST(req: Request) {
         <div style="font-size:14px;color:#374151;line-height:1.55;white-space:pre-wrap;background:#f9fafb;border:1px solid #f3f4f6;border-radius:8px;padding:14px 16px;">${esc(beschreibung)}</div>
       </td></tr>
       <tr><td style="padding:8px 28px 26px 28px;">
-        <div style="font-size:12px;color:#9ca3af;line-height:1.5;">Antworten auf diese E-Mail gehen direkt an den Absender.</div>
+        <div style="font-size:12px;color:#9ca3af;line-height:1.5;">Eingang über das Kontaktformular auf sorokinschweisser.de.</div>
       </td></tr>
     </table>
   </td></tr>
