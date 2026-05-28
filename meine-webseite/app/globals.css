@@ -26,6 +26,12 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent; /* no grey flash on mobile tap */
+  /* Block horizontal swipe/overflow at the document root. iOS Safari does NOT
+     reliably respect overflow-x:hidden on <body> alone — it has to be on
+     <html> too. max-width:100% is belt-and-braces against any rogue child
+     that tries to grow wider than the viewport. */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -33,6 +39,7 @@ body {
   color: #111827;
   font-family: var(--font-inter), 'Inter', 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "kern", "liga", "calt";
