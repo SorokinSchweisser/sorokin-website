@@ -1565,11 +1565,15 @@ export default function Home() {
                 </section>
 
                 <section>
-                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Tätigkeit</h4>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Berufsbezeichnung</h4>
                   <p>
-                    Selbstständiges Setzen von industriellen Schweißnähten, Metallverarbeitung und
-                    Reparaturschweißen.
+                    Selbstständiges Setzen von industriellen Schweißnähten, Metallverarbeitung.
                   </p>
+                </section>
+
+                <section>
+                  <h4 className="font-bold mb-2" style={{ color: "#111827" }}>Rechtsform</h4>
+                  <p>Einzelunternehmen (Kleingewerbe).</p>
                 </section>
 
                 <section>
