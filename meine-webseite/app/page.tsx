@@ -1364,6 +1364,16 @@ export default function Home() {
                       </div>
                     )}
 
+                    {/* DSGVO Einwilligung */}
+                    <label style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 12, color: "#6b7280", lineHeight: 1.5, cursor: "pointer" }}>
+                      <input type="checkbox" required style={{ marginTop: 3, width: 15, height: 15, flexShrink: 0, accentColor: "#ea580c", cursor: "pointer" }} />
+                      <span>
+                        Ich habe die{" "}
+                        <button type="button" onClick={() => setModal("datenschutz")} style={{ color: "#ea580c", textDecoration: "underline", background: "none", border: "none", padding: 0, font: "inherit", cursor: "pointer" }}>Datenschutzerklärung</button>{" "}
+                        gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+                      </span>
+                    </label>
+
                     {/* Submit – Premium */}
                     <button
                       type="submit"
@@ -1612,6 +1622,7 @@ export default function Home() {
           >
             <span>© 2026 SOROKIN Mobiler Schweißservice · Konstantin Sorokin</span>
             <div className="flex gap-5">
+              <a href="https://www.mehrauftrag.de/" target="_blank" rel="noopener" className="footer-link" style={{ color: "#94a3b8" }}>Webseite erstellt von Mehr Auftrag</a>
               <button
                 onClick={() => setModal("impressum")}
                 className="footer-link"
