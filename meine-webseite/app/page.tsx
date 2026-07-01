@@ -208,6 +208,7 @@ export default function Home() {
   const [deleting, setDeleting] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", telefon: "", email: "", beschreibung: "", website: "" });
+  const [datenschutz, setDatenschutz] = useState(false);
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -282,7 +283,7 @@ export default function Home() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, datenschutz, einwilligungZeit: new Date().toISOString() }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       if (!res.ok || !data.ok) {
@@ -1366,7 +1367,7 @@ export default function Home() {
 
                     {/* DSGVO Einwilligung */}
                     <label style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 12, color: "#6b7280", lineHeight: 1.5, cursor: "pointer" }}>
-                      <input type="checkbox" required style={{ marginTop: 3, width: 15, height: 15, flexShrink: 0, accentColor: "#ea580c", cursor: "pointer" }} />
+                      <input type="checkbox" required checked={datenschutz} onChange={(e) => setDatenschutz(e.target.checked)} style={{ marginTop: 3, width: 15, height: 15, flexShrink: 0, accentColor: "#ea580c", cursor: "pointer" }} />
                       <span>
                         Ich habe die{" "}
                         <button type="button" onClick={() => setModal("datenschutz")} style={{ color: "#ea580c", textDecoration: "underline", background: "none", border: "none", padding: 0, font: "inherit", cursor: "pointer" }}>Datenschutzerklärung</button>{" "}
