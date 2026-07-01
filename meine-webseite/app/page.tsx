@@ -2122,6 +2122,17 @@ export default function Home() {
                   <p className="mt-2">
                     Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
                   </p>
+                  <h5 className="font-bold mb-2 mt-4" style={{ color: "#111827" }}>Versand von Kontaktanfragen (E-Mail-Dienst Resend)</h5>
+                  <p>
+                    Zur technischen Zustellung der über das Kontaktformular eingehenden Anfragen an unser E-Mail-Postfach nutzen wir den Dienst Resend des Anbieters Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA. Dabei werden die von Ihnen im Formular angegebenen Daten (Name, Telefonnummer, E-Mail-Adresse, Ihre Nachricht) sowie der Zeitpunkt Ihrer Einwilligung ausschließlich zum Zweck der Zustellung der Anfrage-E-Mail an uns verarbeitet.
+                  </p>
+                  <p className="mt-2">
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung bzw. vorvertragliche Maßnahmen) sowie unser berechtigtes Interesse an einer zuverlässigen und sicheren Zustellung Ihrer Anfrage (Art. 6 Abs. 1 lit. f DSGVO). Mit Resend haben wir einen Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO geschlossen, der eine weisungsgebundene Verarbeitung Ihrer Daten sicherstellt.
+                  </p>
+                  <p className="mt-2">
+                    Da der Anbieter seinen Sitz in den USA hat, kann eine Übermittlung Ihrer Daten in die USA stattfinden. Grundlage der Übermittlung sind die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO). Details finden Sie in der Datenschutzerklärung von Resend unter{" "}
+                    <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:underline break-all" style={{ color: "#0770b0" }}>https://resend.com/legal/privacy-policy</a>.
+                  </p>
                 </section>
 
                 {/* ── 5. Plugins und Tools ── */}
@@ -2162,6 +2173,13 @@ export default function Home() {
                   <p className="mt-2">
                     Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework" (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:{" "}
                     <a href="https://www.dataprivacyframework.gov/participant/5780" target="_blank" rel="noopener noreferrer" className="hover:underline break-all" style={{ color: "#0770b0" }}>https://www.dataprivacyframework.gov/participant/5780</a>.
+                  </p>
+                  <h5 className="font-bold mb-2 mt-4" style={{ color: "#111827" }}>Google-Bewertungen</h5>
+                  <p>
+                    Auf dieser Website zeigen wir Bewertungen an, die Kundinnen und Kunden über Google abgegeben haben (u. a. Name bzw. Kürzel, Bewertungstext und Sternebewertung). Diese Inhalte werden über eine Schnittstelle (Google Places API) der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, abgerufen.
+                  </p>
+                  <p className="mt-2">
+                    Der Abruf der Bewertungen erfolgt serverseitig durch uns. Beim Aufruf dieser Seite wird dabei keine Verbindung von Ihrem Browser zu Google aufgebaut und es werden keine personenbezogenen Daten von Ihnen an Google übermittelt. Rechtsgrundlage für die Darstellung ist unser berechtigtes Interesse an einer transparenten Außendarstellung (Art. 6 Abs. 1 lit. f DSGVO).
                   </p>
                 </section>
 
