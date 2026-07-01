@@ -26,6 +26,8 @@ export async function POST(req: Request) {
     email?: string;
     beschreibung?: string;
     website?: string; // honeypot
+    datenschutz?: boolean;
+    einwilligungZeit?: string;
   };
   try {
     body = await req.json();
@@ -71,6 +73,18 @@ export async function POST(req: Request) {
     );
   }
 
+  if (body.datenschutz !== true) {
+    return NextResponse.json(
+      { ok: false, error: "Bitte stimmen Sie der Datenschutzerklärung zu." },
+      { status: 400 }
+    );
+  }
+
+  const einwilligungZeit =
+    typeof body.einwilligungZeit === "string" && body.einwilligungZeit
+      ? body.einwilligungZeit
+      : new Date().toISOString();
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error("[contact] RESEND_API_KEY is not set");
@@ -97,7 +111,8 @@ export async function POST(req: Request) {
         `Name:    ${name}\n` +
         `Telefon: ${telefon}\n` +
         `E-Mail:  ${email}\n\n` +
-        `Auftragsbeschreibung:\n${beschreibung}\n`,
+        `Auftragsbeschreibung:\n${beschreibung}\n\n` +
+        `Einwilligung Datenschutz: Ja (Zeitpunkt: ${einwilligungZeit})\n`,
       // Minimal-HTML: kein font-family, keine externen Ressourcen, keine
       // farbigen Akzente. Werte als plain spans (kein <a>) + format-detection
       // Meta — verhindert Strikethrough bei Gmail/IONOS-Webmail.
@@ -134,6 +149,9 @@ export async function POST(req: Request) {
   <tr><td style="padding:10px 0 0 0;">
     <p style="margin:0 0 6px 0;font-size:13px;color:#666666;">Auftragsbeschreibung:</p>
     <p style="margin:0;font-size:14px;line-height:1.5;color:#000000;white-space:pre-wrap;">${esc(beschreibung)}</p>
+  </td></tr>
+  <tr><td style="padding:10px 0 0 0;border-top:1px solid #eeeeee;">
+    <p style="margin:8px 0 0 0;font-size:12px;color:#666666;">Einwilligung Datenschutz: <strong style="color:#000000;">Ja</strong> — Zeitpunkt: ${esc(einwilligungZeit)}</p>
   </td></tr>
 </table>
 </body>
